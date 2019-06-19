@@ -1,7 +1,7 @@
 # ANTISOCIAL_MEDIA
 For those of us that don't fit the "politically correct" standards of society, or anywhere else.
 
-Last Update: 4/15/2019 by MDG
+Last Update: 6/18/2019 by MDG
 *****************************************************************************************************************
 You can use this command set to take care of all of the installs and configurations at once:
 
