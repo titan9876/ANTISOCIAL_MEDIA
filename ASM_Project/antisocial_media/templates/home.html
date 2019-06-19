@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+	{% if current_user.is_authenticated %}
+	{% for post in posts %}
+	<article class="media content-section">
+	  <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+	  <div class="media-body">
+	    <div class="article-metadata">
+	      <a class="mr" style="color:blue">{{ post.author.username }}</a>
+	      <small class="text-muted"> : {{ post.post_date.strftime('%m-%d-%Y') }}</small>
+	      {% if post.author == current_user %}
+	      	<a class="btn btn-danger btn-sm float-right" href="{{ url_for('delete_post', post_id=post.id) }}">Shred It!!!!</a>
+	      {% else %}
+	      	<a class="btn btn-success btn-sm float-right" href="{{ url_for('add_violation', post_id=post.id, post_author=post.author.username) }}">Just Wrong!</a>
+	      {% endif %}	      
+	    </div>
+	    <p class="article-content">{{ post.content }}</p>
+	  </div>
+	</article>
+	{% endfor %}
+	{% else %}
+	<div>
+		<H2>You Must Be Logged In to View Content.</H2>
+	</div>
+	    <div>
+        <small class="text-muted">
+            Need an Account? <a class="ml-2" href="{{ url_for('register') }}">Register Here</a>
+        </small>
+    </div>
+        <div class="border-top pt-3">
+        <small class="text-muted">
+            Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+        </small>
+    </div>
+	{% endif %}
+{% endblock content %}
