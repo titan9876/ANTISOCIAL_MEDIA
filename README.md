@@ -1,5 +1,5 @@
 # ANTISOCIAL_MEDIA
-For those of us that don't fit the normal social requirements of society
+For those of us that don't fit the "politically correct" standards of society, or anywhere else.
 
 Last Update: 4/15/2019 by MDG
 *****************************************************************************************************************
